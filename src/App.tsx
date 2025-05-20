@@ -1,24 +1,16 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import New from "./pages/new";
+import Gallery from "./pages/gallery";
 
 function App() {
-
-
   return (
-    <main>
-      
-      <h1>Image Gallery Hackathon</h1>
-      <ul>
-        <li>
-          New Image
-        </li>
-        <li>
-          <a href="/gallery">Gallery</a>
-        </li>
-      </ul>
-    </main>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<New />} />
+        <Route path="/gallery" element={<Gallery />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
